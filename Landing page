@@ -1,0 +1,168 @@
+import React from 'react';
+import './App.css';
+
+const App = () => {
+  return (
+    <div className="App">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="hero">
+          <h1>Welcome to FinKraft</h1>
+          <p>Reimagining the future of finance</p>
+          <button>Learn More</button>
+        </section>
+        <section id="services">
+          <h2>Our Services</h2>
+          <div className="service-card">
+            <h3>Service 1</h3>
+            <p>Description of Service 1</p>
+          </div>
+          {/* Add more service cards as needed */}
+        </section>
+        <section id="about">
+          <h2>About Us</h2>
+          <p>We are a team of finance and technology enthusiasts...</p>
+          <ul>
+            <li>2000: Founded</li>
+            <li>2005: Launched our first product</li>
+            {/* Add more milestones as needed */}
+          </ul>
+        </section>
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <form>
+            <label for="name">Name:</label><br/>
+            <input type="text" id="name" name="name"/><br/>
+            <label for="email">Email:</label><br/>
+            <input type="email" id="email" name="email"/><br/>
+            <input type="submit" value="Submit"/>
+          </form>
+        </section>
+      </main>
+      <footer>
+        <p>© 2024 FinKraft. All rights reserved.</p>
+        <div>
+          <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero Section Styles */
+#hero {
+  background-image: url('your-image-url');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+#hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 24px;
+}
+
+/* Services Section Styles */
+#services {
+  padding: 50px 0;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* About Us Section Styles */
+#about {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+/* Contact Us Section Styles */
+#contact {
+  padding: 50px 0;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+#contact form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
