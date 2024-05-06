@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/styles/ag-grid.css';
+import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+const DataTableWithChart = () => {
+  // Sample data for the grid
+  const [rowData] = useState([
+    { make: 'Toyota', model: 'Celica', price: 35000 },
+    { make: 'Ford', model: 'Mondeo', price: 32000 },
+    { make: 'Porsche', model: 'Boxster', price: 72000 }
+  ]);
+
+  // Column definitions for the grid
+  const [columnDefs] = useState([
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' }
+  ]);
+
+  // Default column properties
+  const defaultColDef = {
+    sortable: true,
+    filter: true
+  };
+
+  // Chart options
+  const [gridOptions] = useState({
+    enableRangeSelection: true,
+    enableCharts: true,
+    popupParent: document.body
+  });
+
+  return (
+    <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
+      <AgGridReact
+        rowData={rowData}
+        columnDefs={columnDefs}
+        defaultColDef={defaultColDef}
+        gridOptions={gridOptions}
+      />
+    </div>
+  );
+};
+
+
+// Grid options
+  const [gridOptions] = useState({
+    enableRangeSelection: true,
+    enableCharts: true,
+    processChartOptions: function(params) {
+      var opts = params.options;
+      opts.title.enabled = true;
+      opts.title.text = "Price Distribution";
+      opts.legend.position = 'bottom';
+      return opts;
+    }
+  });
+
+ 
+
+export default DataTableWithChart;
